@@ -7,16 +7,19 @@
 <body style="text-align:center; margin-top:100px;">
 
 <h2>📸 กดเพื่อดูรูป</h2>
-<button onclick="boom()" style="font-size:30px;">กดเลย</button>
+<button id="btn" style="font-size:30px;">กดเลย</button>
 
-<audio id="sound" src="new-meme-53393.mp3"></audio>
+<audio id="sound" preload="auto">
+  <source src="new-meme-53393.mp3" type="audio/mpeg">
+</audio>
 
 <script>
-function boom() {
+document.getElementById("btn").addEventListener("click", () => {
   const audio = document.getElementById("sound");
   audio.volume = 1.0;
-  audio.play();
-}
+  audio.currentTime = 0;
+  audio.play().catch(e => alert("ไม่สามารถเล่นเสียงได้"));
+});
 </script>
 
 </body>

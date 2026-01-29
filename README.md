@@ -3,24 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>กำลังโหลดรูป...</title>
+<title>อย่ากดนะ</title>
 
 <style>
 body {
   margin: 0;
   height: 100vh;
-  background: #f2f2f2;
+  background: #111;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: system-ui, sans-serif;
+  color: #fff;
 }
 
 .card {
-  background: #fff;
+  background: #1c1c1c;
   padding: 30px;
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+  box-shadow: 0 10px 30px rgba(0,0,0,.6);
   text-align: center;
   width: 90%;
   max-width: 360px;
@@ -28,27 +29,29 @@ body {
 
 h2 {
   margin-bottom: 10px;
+  color: #ff4d4d;
 }
 
 p {
-  color: #666;
-  font-size: 14px;
+  color: #ccc;
+  font-size: 15px;
 }
 
 button {
-  margin-top: 20px;
+  margin-top: 25px;
   width: 100%;
-  padding: 16px;
-  font-size: 18px;
+  padding: 18px;
+  font-size: 20px;
   border: none;
   border-radius: 12px;
-  background: #007aff;
+  background: #ff3b3b;
   color: #fff;
   cursor: pointer;
+  font-weight: bold;
 }
 
 button:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
 }
 </style>
 </head>
@@ -56,13 +59,13 @@ button:active {
 <body>
 
 <div class="card">
-  <h2>📸 รูปนี้ถูกเบลอ</h2>
-  <p>กดยืนยันเพื่อดูรูปแบบชัด</p>
-  <button id="btn">ดูรูป</button>
+  <h2>🚫 อย่ากดนะ</h2>
+  <p>ขอร้องจริง ๆ อย่ากดปุ่มข้างล่าง<br>มันไม่ใช่เรื่องดีแน่</p>
+  <button id="btn">อย่ากด ❌</button>
 </div>
 
 <audio id="sound" preload="auto">
-  <source src="new-meme-53393.mp3" type="audio/mpeg">
+  <source src="Gg.mp3" type="audio/mpeg">
 </audio>
 
 <script>
@@ -73,10 +76,11 @@ document.getElementById("btn").addEventListener("click", () => {
   audio.play();
 
   if (navigator.vibrate) {
-    navigator.vibrate([200,100,200,100,400]);
+    navigator.vibrate([300,150,300,150,500]);
   }
 
-  document.querySelector(".card").innerHTML = "<h2>❌ โหลดไม่สำเร็จ</h2><p>กรุณาลองใหม่ภายหลัง</p>";
+  document.querySelector(".card").innerHTML =
+    "<h2>😈 บอกแล้วว่าอย่ากด</h2><p>สายไปแล้ว...</p>";
 });
 </script>
 
